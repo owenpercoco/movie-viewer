@@ -20,17 +20,15 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+## description of problem
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This application is a section of a movie-browsing single page website. 
+Make a page that allows a user to view a list of the top 10 most popular movies from each of the last 5 years. Your data source will be The Movie DB (https://developers.themoviedb.org/3). You can use this API key - aa0ea741dcbdabdf6fd9953b60e629cf
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+There should be a dropdown with the different years. Selecting the dropdown should refresh the list of movie thumbnails. There should also be a dropdown to change the sort order
 
-## Deploy on Vercel
+Clicking on a movie thumbnail should refresh the top detail section with additional movie information. If the movie has videos, a video play button should appear. Clicking that button should play that video.
+All year, movie, and video "pages" should have unique url paths.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+In addition to the functional javascript, please pay attention to making any animations/transitions look smooth and the aesthetics beautiful. Bonus points for improving on the 'wireframe' stylistically and basic responsiveness.
