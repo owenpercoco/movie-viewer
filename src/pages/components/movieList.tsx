@@ -11,11 +11,12 @@ interface Movie {
 interface MovieListProps {
   year: string;
   sortOrder: string;
+  sortText: string;
   onMovieSelect: (movieId: number) => void;
 }
 
-const MovieList = ({ year, sortOrder, onMovieSelect }: MovieListProps) => {
-  const { movies, loading } = useMovies(year, sortOrder);
+const MovieList = ({ year, sortOrder, sortText, onMovieSelect }: MovieListProps) => {
+  const { movies, loading } = useMovies(year, sortOrder, sortText);
   const [rightPage, setRightPage] = useState(3);
   const [leftPage, setLeftPage] = useState(0);
 
@@ -39,18 +40,18 @@ const MovieList = ({ year, sortOrder, onMovieSelect }: MovieListProps) => {
         <div className='movie-list-container'>
         {movies.slice(leftPage, rightPage).map((movie: Movie) => (
             <div key={movie.id} className='movie-wrapper' onClick={() => onMovieSelect(movie.id)}>
-            <div className="movie-container">
-                <Image
-                className='list-image'
-                src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
-                alt={movie.title}
-                width={200}
-                height={300}
-                />
-                <div className="movie-text">
-                <h2>{movie.title}</h2>
-                </div>
-            </div>
+              <div className="movie-container">
+                  <Image
+                  className='list-image'
+                  src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
+                  alt={movie.title}
+                  width={200}
+                  height={300}
+                  />
+                  <div className="movie-text">
+                    <h2>{movie.title}</h2>
+                  </div>
+              </div>
             </div>
         ))}
         </div>

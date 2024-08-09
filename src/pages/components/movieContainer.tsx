@@ -15,7 +15,12 @@ const MovieContainer = ({ initialYear, initialMovieId, initialVideoId } : MovieC
   const [sortOrder, setSortOrder] = useState<string>('popularity.desc');
   const [selectedMovieId, setSelectedMovieId] = useState<number | null>(initialMovieId || null);
   const [selectedVideoId, setSelectedVideoId] = useState<string | null>(initialVideoId || null);
+  const [sortTextField, setSortTextField] = useState<string>('')
   const router = useRouter();
+
+  useEffect(() => {
+    console.log(sortTextField)
+  }, [sortTextField]);
 
   useEffect(() => {
     if (year && selectedMovieId !== null) {
@@ -71,12 +76,18 @@ const MovieContainer = ({ initialYear, initialMovieId, initialVideoId } : MovieC
                 <option value="popularity.asc">Ascending</option>
             </select>
         </div>
+        <div className='text-container'>
+            <input type="text" onchange={(e: ChangeEvent<HTMLInputElement>) => {
+              console.log("firing change method", e.target)
+              setSortTextField(e.target.value)}
+              } value={sortTextField} placeholder="arbitrary sort"/>
+        </div>
       </div>
       <div className="movie-detail-wrapper">
         {selectedMovieId && <MovieDetail movieId={selectedMovieId} selectedVideoId={selectedVideoId} onVideoSelect={handleVideoSelect} />}
       </div>
       <div className="list-wrapper">
-        <MovieList year={year} sortOrder={sortOrder} onMovieSelect={handleMovieSelect} />
+        <MovieList year={year} sortOrder={sortOrder} sortText={sortTextField} onMovieSelect={handleMovieSelect} />
       </div>
     </div>
   );

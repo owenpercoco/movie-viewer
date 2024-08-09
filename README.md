@@ -24,7 +24,7 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 ## description of problem
 
 This application is a section of a movie-browsing single page website. 
-Make a page that allows a user to view a list of the top 10 most popular movies from each of the last 5 years. Your data source will be The Movie DB (https://developers.themoviedb.org/3). You can use this API key - aa0ea741dcbdabdf6fd9953b60e629cf
+Make a page that allows a user to view a list of the top 10 most popular movies from each of the last 5 years. Your data source will be The Movie DB (https://developers.themoviedb.org/3). You can use this API key - 
 
 There should be a dropdown with the different years. Selecting the dropdown should refresh the list of movie thumbnails. There should also be a dropdown to change the sort order
 
@@ -32,3 +32,5 @@ Clicking on a movie thumbnail should refresh the top detail section with additio
 All year, movie, and video "pages" should have unique url paths.
 
 In addition to the functional javascript, please pay attention to making any animations/transitions look smooth and the aesthetics beautiful. Bonus points for improving on the 'wireframe' stylistically and basic responsiveness.
+
+
